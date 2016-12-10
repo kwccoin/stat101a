@@ -1,0 +1,111 @@
+SET PRINTBACK ON.
+
+* windows: /FILE="D:\coin-pspp-spss\data\2016-12-10=HT 1 dollar green=ANSI.txt"
+.
+* linux:   /FILE="data/2016-12-10=HT 1 dollar green=ANSI.txt" .
+
+GET DATA
+/TYPE=TXT
+/FILE="data/2016-12-10=HT 1 dollar green=ANSI.txt"
+/ARRANGEMENT=DELIMITED
+/DELCASE=LINE
+/DELIMITERS="\t"
+/VARIABLES=
+obsnum F4.0
+result A1.
+
+RECODE result
+("h" = 1) ("t" = 0)
+INTO resnum.
+
+DESCRIPTIVES
+/VARIABLES= resnum.
+
+Valid cases = 30; cases with missing value(s) = 0.
++--------#--+----+-------+-------+-------+
+|Variable# N|Mean|Std Dev|Minimum|Maximum|
+#========#==#====#=======#=======#=======#
+|resnum  #30| .63|    .49|    .00|   1.00|
++--------#--+----+-------+-------+-------+
+
+* windows: SAVE OUTFILE="D:\coin-pspp-spss\data\2016-12-10=HT 1 dollar
+green=ANSI.sav" .
+* linux:   SAVE OUTFILE=="data/2016-12-10=HT 1 dollar green=ANSI.sav" .
+
+SAVE OUTFILE="data/2016-12-10=HT 1 dollar green=ANSI.sav"
+
+EXECUTE.
+
+* -------
+
+* windows: /FILE="D:\coin-pspp-spss\data\2016-12-10=HT 1 dollar=ANSI.txt" .
+* linux:   /FILE="data/2016-12-10=HT 1 dollar=ANSI.txt" .
+
+GET DATA
+/TYPE=TXT
+/FILE="data/2016-12-10=HT 1 dollar=ANSI.txt"
+/ARRANGEMENT=DELIMITED
+/DELCASE=LINE
+/DELIMITERS="\t"
+/VARIABLES=
+obsnum F4.0
+result A1.
+
+RECODE result
+("h" = 1) ("t" = 0)
+INTO resnum.
+
+DESCRIPTIVES
+/VARIABLES= resnum.
+
+Valid cases = 30; cases with missing value(s) = 0.
++--------#--+----+-------+-------+-------+
+|Variable# N|Mean|Std Dev|Minimum|Maximum|
+#========#==#====#=======#=======#=======#
+|resnum  #30| .47|    .51|    .00|   1.00|
++--------#--+----+-------+-------+-------+
+
+* windows: SAVE OUTFILE="D:\coin-pspp-spss\data\2016-12-10=HT 1 dollar=ANSI.
+sav" .
+* linux:   SAVE OUTFILE=="data/2016-12-10=HT 1 dollar=ANSI.sav" .
+
+SAVE OUTFILE="data/2016-12-10=HT 1 dollar=ANSI.sav"
+
+EXECUTE.
+
+* -----------
+
+* windows: /FILE="D:\coin-pspp-spss\data\2016-12-10=HT 50 cents=ANSI.txt" .
+* linux:   /FILE="data/2016-12-10=HT 50 cents=ANSI.txt" .
+
+GET DATA
+/TYPE=TXT
+/FILE="data/2016-12-10=HT 50 cents=ANSI.txt"
+/ARRANGEMENT=DELIMITED
+/DELCASE=LINE
+/DELIMITERS="\t"
+/VARIABLES=
+obsnum F4.0
+result A1.
+
+RECODE result
+("h" = 1) ("t" = 0)
+INTO resnum.
+
+DESCRIPTIVES
+/VARIABLES= resnum.
+
+Valid cases = 30; cases with missing value(s) = 0.
++--------#--+----+-------+-------+-------+
+|Variable# N|Mean|Std Dev|Minimum|Maximum|
+#========#==#====#=======#=======#=======#
+|resnum  #30| .50|    .51|    .00|   1.00|
++--------#--+----+-------+-------+-------+
+
+* windows: SAVE OUTFILE="D:\coin-pspp-spss\data\2016-12-10=HT 50 cents=ANSI.
+sav" .
+* linux:   SAVE OUTFILE=="data/2016-12-10=HT 50 cents=ANSI.sav" .
+
+SAVE OUTFILE="data/2016-12-10=HT 50 cents=ANSI.sav"
+
+EXECUTE.
